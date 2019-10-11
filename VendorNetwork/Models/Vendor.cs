@@ -8,13 +8,15 @@ namespace Vendor.Models
 
     public string Name { get; }
     public string Description { get; set; }
-    public static List<string> Orders = new List<string>{};
+    public int Id { get; }
+    public static List<Vendor> VendorList = new List<Vendor>{};
 
     public Vendor(string name, string description)
     {
       Name = name;
       Description = description;
-      Orders.Add(this);
+      Id = VendorList.Count;
+      VendorList.Add(this);
     }
   }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Vendor.Models;
 
 namespace Order.Models
 {
@@ -10,6 +11,8 @@ namespace Order.Models
     public string Description { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
+    public int Id { get; set; }
+    public static List<Order> OrderList = new List<Order>{};
 
     public Order(string title, string description, int price, string Date)
     {
@@ -17,8 +20,12 @@ namespace Order.Models
       Description = description;
       Price = price;
       Date = date;
+      Id = OrderList.Count;
+      OrderList.Add(this);
     }
 
-    
+
+
+
   }
 }
