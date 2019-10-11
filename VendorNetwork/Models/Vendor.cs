@@ -26,7 +26,7 @@ namespace VendorNetwork.Models
       return VendorList;
     }
 
-     public static Vendor Find(int searchId)
+     public static Vendor FindVendor(int searchId)
     {
       return VendorList[searchId-1];
     }

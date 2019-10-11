@@ -9,5 +9,14 @@
   <h3>No orders have been added for this vendor!</h3>
 } 
 
+<ul>
+  @foreach (Order order in Model)
+  {
+    <li><a href='/orders/@order.Id'>@order.Name</a></li>
+  }
+</ul>
+
+<a href="/orders/new">Add a new order.</a>
+
 
 <p><a href='/'>Back home</a></p>
