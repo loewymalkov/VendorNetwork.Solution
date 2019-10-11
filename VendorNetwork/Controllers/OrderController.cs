@@ -20,18 +20,18 @@ namespace VendorNetwork.Controllers
     }
 
     [HttpPost("/orders")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string name, string description, int price, string date)
     {
-      Item myItem = new Item(description);
+      Order newOrder = new Order(name, description, price, date);
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/orders/{id}")]
-    public ActionResult Show(int id)
-    {
-      Order foundOrder = Order.FindOrder(id);
-      return View(foundOrder);
-    }
+    // [HttpGet("/orders/{id}")]
+    // public ActionResult Show(int id)
+    // {
+    //   Order foundOrder = Order.FindOrder(id);
+    //   return View(foundOrder);
+    // }
 
   }
 }

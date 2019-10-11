@@ -17,7 +17,7 @@ namespace VendorNetwork.Models
       Name = name;
       Description = description;
       VendorList.Add(this);
-      Id = Vendors.Count;
+      Id = VendorList.Count;
       OrdersList = new List<Order>{};
     }
 

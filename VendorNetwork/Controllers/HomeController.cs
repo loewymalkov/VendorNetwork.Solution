@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Vendor.Models;
+using VendorNetwork.Models;
 
 namespace Vendor.Controllers
 {

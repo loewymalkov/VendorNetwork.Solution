@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using VendorNetWork.Models;
+using System.Collections.Generic;
+using System;
+using VendorNetwork.Models;
 
 namespace VendorNetwork.Controllers
 {
@@ -8,7 +10,8 @@ namespace VendorNetwork.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-        return View();
+      List<Vendor> allVendors = Vendor.GetVendors();
+      return View(allVendors);
     }
 
     [HttpGet("/vendors/new")]
