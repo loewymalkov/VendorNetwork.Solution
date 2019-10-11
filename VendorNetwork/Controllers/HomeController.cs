@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorNetwork.Models;
 
-namespace Vendor.Controllers
+namespace VendorNetwork.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,4 +1,4 @@
-@using Orders.Models;
+@using VendorNetwork.Models;
 
 <h1>Orders</h1>
 
@@ -8,10 +8,10 @@
 {
   <h3>No orders have been added for this vendor!</h3>
 } 
-
-@foreach (Order order in Model)
-{
-  <h3><a href='/orders/@orders.Id'>@order.Name</a></h3>
-}
-
+<ul>
+  @foreach (Order order in Model)
+  {
+    <h3><a href='/orders/@orders.Id'>@order.Title</a></h3>
+  }
+</ul>
 <p><a href='/'>Back home</a></p>

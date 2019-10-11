@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 namespace VendorNetwork.Models
 {
   public class Order
@@ -14,7 +13,7 @@ namespace VendorNetwork.Models
     public int Id { get; set; }
     public static List<Order> OrderList = new List<Order>{};
 
-    public Order(string title, string description, int price, string Date)
+    public Order(string title, string description, int price, string date)
     {
       Title = title;
       Description = description;
@@ -24,11 +23,10 @@ namespace VendorNetwork.Models
       OrderList.Add(this);
     }
 
-    // public static List<Order> DisplayAll()
-    // {
-    //   return OrderList;
-    // }
-
+    public static Order FindOrder(int searchId)
+    {
+      return OrderList[searchId-1];
+    }
 
   }
 }

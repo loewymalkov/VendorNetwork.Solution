@@ -26,12 +26,12 @@ namespace VendorNetwork.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpGet("/orders/{id}")]
-    // public ActionResult Show(int id)
-    // {
-    //   Order foundOrder = Order.FindOrder(id);
-    //   return View(foundOrder);
-    // }
+    [HttpGet("/orders/{id}")]
+    public ActionResult Show(int id)
+    {
+      Order foundOrder = Order.FindOrder(id);
+      return View(foundOrder);
+    }
 
   }
 }
