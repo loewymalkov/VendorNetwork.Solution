@@ -1,9 +1,14 @@
 @using VendorNetwork.Models;
 
-<h1>Vendor Details: </h1>
+<h3>Here are all the vendors in the network:</h3>
 
-<h2>@vendor.Name</h2>
-<h2>@vendor.Description</h2>
+<ul>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+}
+</ul>
 
-<a href='/vendors/new'>Add another item</a>
-<a href='/vendors'>View all items</a>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new item</a></p>
+<p><a href='/vendors'>Return to vendor list</a></p>
+<p><a href='/'>Return to Main Page</a></p>

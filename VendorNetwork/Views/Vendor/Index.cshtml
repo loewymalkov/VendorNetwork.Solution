@@ -7,10 +7,9 @@
   <h3>No vendors have been added yet!</h3>
 } 
 
-@foreach (Vendor vendor in Model)
+@foreach (Vendor vendor in @Model.VendorList)
 {
   <p><a href='/vendors/@vendor.Id'>@vendor.Name</a></p>
-  <p><a href='/vendors/@vendor.Id'>@vendor.Description</a></p>
 }
 
 <p><a href='/'>Back home</a></p>
