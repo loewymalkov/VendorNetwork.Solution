@@ -24,7 +24,10 @@ namespace Order.Models
       OrderList.Add(this);
     }
 
-
+    // public static List<Order> DisplayAll()
+    // {
+    //   return OrderList;
+    // }
 
 
   }
