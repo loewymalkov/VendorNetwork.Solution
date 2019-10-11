@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Vendor.Models;
+using VendorNetWork.Models;
 
-namespace Vendor.Controllers
+namespace VendorNetwork.Controllers
 {
   public class VendorController : Controller
   {
@@ -18,9 +18,9 @@ namespace Vendor.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string name, string description)
     {
-      Item myItem = new Item(description);
+      Vendor newVendor = new Vendor(name, description);
       return RedirectToAction("Index");
     }
 

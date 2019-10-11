@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using VendorNetwork.Models;
 using System.Collections.Generic;
 
-namespace ToDoList.Controllers
+namespace VendorNetwork.Controllers
 {
-  public class ItemsController : Controller
+  public class OrderController : Controller
   {
 
     [HttpGet("/orders")]

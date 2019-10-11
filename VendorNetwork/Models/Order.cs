@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Vendor.Models;
 
-namespace Order.Models
+
+namespace VendorNetwork.Models
 {
   public class Order
   {
