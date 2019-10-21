@@ -4,31 +4,40 @@ namespace VendorNetwork.Models
 {
   public class Vendor
   {
-    // Create a Vendor class. This class should include properties for the vendor's name, a description of the vendor, a List of Orders belonging to the vendor, and any other properties you would like to include.
-
-    public static List<Vendor> VendorList = new List<Vendor> {};
-    public string Name { get; }
+    private static List<Vendor> _instances = new List<Vendor> { };
+    public string Name { get; set; }
     public string Description { get; set; }
     public int Id { get; }
     public List<Order> Orders { get; set; }
 
-    public Vendor(string name, string description)
+    public Vendor(string vendorName, string vendorDescription)
     {
-      Name = name;
-      Description = description;
-      VendorList.Add(this);
-      Id = VendorList.Count;
-      Orders = new List<Order>{};
+      Name = vendorName;
+      Description = vendorDescription;
+      _instances.Add(this);
+      Id = _instances.Count;
+      Orders = new List<Order> { };
     }
 
-      public static List<Vendor> GetVendors()
+    public static void ClearAll()
     {
-      return VendorList;
+      _instances.Clear();
     }
 
-     public static Vendor FindVendor(int searchId)
+    public static List<Vendor> GetVendors()
     {
-      return VendorList[searchId-1];
+      return _instances;
+    }
+
+    public static Vendor FindVendor(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
+
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
   }
 }
